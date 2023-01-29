@@ -4,6 +4,10 @@ January 29, 2023
 This Python MOdule contains source code for the Lexer of our Python-based compiler
 """
 
+# Imports
+import enum
+
+
 # Code for the Lexer class
 class Lexer:
 
@@ -65,5 +69,10 @@ class Lexer:
             pass
 			
         self.nextChar()
-        
 
+
+# Token contains the original text and the type of token.
+class Token:   
+    def __init__(self, tokenText, tokenKind):
+        self.text = tokenText   # The token's actual text. Used for identifiers, strings, and numbers.
+        self.kind = tokenKind   # The TokenType that this token is classified as.
