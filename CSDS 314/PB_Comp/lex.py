@@ -6,6 +6,7 @@ This Python MOdule contains source code for the Lexer of our Python-based compil
 
 # Imports
 import enum
+import sys
 
 
 # Code for the Lexer class
@@ -38,11 +39,12 @@ class Lexer:
 
     # Invalid token error message
     def abort(self, message):
-        pass
+        sys.exit("Lexing error. " + message)
 
     # Function to skip whitespace
     def skipWhitespace(self):
-        pass
+        while self.curChar == ' ' or self.curChar == '\t' or self.curChar == '\r':
+            self.nextChar()
 
     # Function to skip a comment
     def skipComment(self):
@@ -68,7 +70,7 @@ class Lexer:
             token = Token('', TokenType.EOF)
         else:
             # Unknown token!
-            pass
+            self.abort("Unknown token: " + self.curChar)
 			
         self.nextChar()
         return token
