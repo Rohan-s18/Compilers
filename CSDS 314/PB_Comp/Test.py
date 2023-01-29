@@ -18,7 +18,7 @@ def main():
         print(my_lexer.curChar)
         my_lexer.nextChar()
 
-    code = "+- */"
+    code = "+- */ >>= = !="
     my_lexer = Lexer(code)
 
     token = my_lexer.getToken()
