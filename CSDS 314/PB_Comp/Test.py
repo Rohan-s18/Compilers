@@ -18,7 +18,19 @@ def main():
         print(my_lexer.curChar)
         my_lexer.nextChar()
 
+    print("\n")
+
     code = "+- */ >>= = !="
+    my_lexer = Lexer(code)
+
+    token = my_lexer.getToken()
+    while token.kind != TokenType.EOF:
+        print(token.kind)
+        token = my_lexer.getToken()
+
+    print("\n")
+
+    code = "IF+-123 foo*THEN/"
     my_lexer = Lexer(code)
 
     token = my_lexer.getToken()
