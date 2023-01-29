@@ -18,5 +18,13 @@ def main():
         print(my_lexer.curChar)
         my_lexer.nextChar()
 
+    code = "+- */"
+    my_lexer = Lexer(code)
+
+    token = my_lexer.getToken()
+    while token.kind != TokenType.EOF:
+        print(token.kind)
+        token = my_lexer.getToken()
+
 if __name__ == "__main__":
     main()
