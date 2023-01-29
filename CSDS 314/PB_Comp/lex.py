@@ -50,25 +50,29 @@ class Lexer:
     
     # Function that returns the next character
     def getToken(self):
+        token = None
+
         # Check the first character of this token to see if we can decide what it is.
         # If it is a multiple character operator (e.g., !=), number, identifier, or keyword then we will process the rest.
         if self.curChar == '+':
-            pass	# Plus token.
+            token = Token(self.curChar, TokenType.PLUS)
         elif self.curChar == '-':
-            pass	# Minus token.
+            token = Token(self.curChar, TokenType.MINUS)
         elif self.curChar == '*':
-            pass	# Asterisk token.
+            token = Token(self.curChar, TokenType.ASTERISK)
         elif self.curChar == '/':
-            pass	# Slash token.
+            token = Token(self.curChar, TokenType.SLASH)
         elif self.curChar == '\n':
-            pass	# Newline token.
+            token = Token(self.curChar, TokenType.NEWLINE)
         elif self.curChar == '\0':
-            pass	# EOF token.
+            token = Token('', TokenType.EOF)
         else:
             # Unknown token!
             pass
 			
         self.nextChar()
+        return token
+
 
 
 # Token contains the original text and the type of token.
