@@ -1,2 +1,0 @@
-# Compiler for CSDS 314
-This directory contains the source code for a compiler that I made for an extra credit project for my Computer Architecture class at Case Western Reserve University for the Spring 2023 semester. 
