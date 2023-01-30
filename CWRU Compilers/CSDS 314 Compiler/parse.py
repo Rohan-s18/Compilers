@@ -3,6 +3,8 @@ from lex import *
 
 # Parser object keeps track of current token and checks if the code matches the grammar.
 class Parser:
+
+    # init function
     def __init__(self, lexer):
         self.lexer = lexer
         self.curToken = None
@@ -124,3 +126,5 @@ class Parser:
         # But we will allow extra newlines too, of course.
         while self.checkToken(TokenType.NEWLINE):
             self.nextToken()
+
+
