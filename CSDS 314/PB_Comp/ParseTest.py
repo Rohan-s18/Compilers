@@ -3,7 +3,7 @@ from parse import *
 import sys
 
 def main():
-    print("Teeny Tiny Compiler")
+    print("Compiler")
 
     if len(sys.argv) != 2:
         sys.exit("Error: Compiler needs source file as argument.")
