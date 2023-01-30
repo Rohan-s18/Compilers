@@ -128,3 +128,26 @@ class Parser:
             self.nextToken()
 
 
+    # comparison ::= expression (("==" | "!=" | ">" | ">=" | "<" | "<=") expression)+
+    def comparison(self):
+        print("COMPARISON")
+
+        self.expression()
+        # Must be at least one comparison operator and another expression.
+        if self.isComparisonOperator():
+            self.nextToken()
+            self.expression()
+        else:
+            self.abort("Expected comparison operator at: " + self.curToken.text)
+
+        # Can have 0 or more comparison operator and expressions.
+        while self.isComparisonOperator():
+            self.nextToken()
+            self.expression()
+
+
+    # Return true if the current token is a comparison operator.
+    def isComparisonOperator(self):
+        return self.checkToken(TokenType.GT) or self.checkToken(TokenType.GTEQ) or self.checkToken(TokenType.LT) or self.checkToken(TokenType.LTEQ) or self.checkToken(TokenType.EQEQ) or self.checkToken(TokenType.NOTEQ)
+
+
