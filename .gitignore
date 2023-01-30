@@ -6,3 +6,11 @@
 *.out
 
 *.exe
+
+.venv
+
+.env
+
+env
+
+venv
