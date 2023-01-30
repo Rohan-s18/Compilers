@@ -2,3 +2,7 @@
 .vscode
 
 *.pyc
+
+*.out
+
+*.exe
