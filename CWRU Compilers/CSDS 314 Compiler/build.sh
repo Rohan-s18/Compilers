@@ -19,7 +19,7 @@ function comp {
 }
 
 if [ $# -eq 0 ]; then
-	for i in $(ls examples/*.teeny); do
+	for i in $(ls examples/*.tiny); do
 		comp $i
 	done
 else
