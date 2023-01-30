@@ -1,7 +1,7 @@
 """
 Author: Rohan Singh
 January 29, 2023
-This Python MOdule contains source code for the Lexer of our Python-based compiler
+This Python Module contains source code for the Lexer of our Python-based compiler
 """
 
 # Imports
