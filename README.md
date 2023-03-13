@@ -1,6 +1,8 @@
 # Compilers
 ## Author: Rohan Singh
-Source code for some compilers that I made for funsies. 
+Source code for some compilers that I made for funsies.  
+
+Compiler, I hardly know her!!!
 
 ## Compiler Projects
 These are the directories for my compilers:  
