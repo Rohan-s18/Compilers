@@ -1,4 +1,7 @@
-
+"""
+Author: Rohan Singh
+Python Compiler for verilog to Mips
+"""
 
 def verilog_to_mips(verilog_instruction):
     if verilog_instruction.startswith('add'):
@@ -7,19 +10,20 @@ def verilog_to_mips(verilog_instruction):
         
         # Map the Verilog registers to their MIPS equivalents
         mips_registers = {
-            'r1': '$s1',
-            'r2': '$s2',
+            'r1,': '$s1',
+            'r2,': '$s2',
             'r3': '$s3'
         }
-        
+
         # Build the MIPS instruction string with the mapped registers
-        #mips_instruction = f"add {mips_registers[operands[0]]}, {mips_registers[operands[1]]}, {mips_registers[operands[2]]}"
-        mips_instruction = "add {}, {}, {}".format(mips_registers[operands[0]], mips_registers[operands[1]], mips_registers[operands[2]])
+        mips_instruction = "add {0}, {1}, {2}".format(mips_registers[operands[0]], mips_registers[operands[1]], mips_registers[operands[2]])
 
-
+        #mips_instruction = ""
         return mips_instruction
     else:
         raise ValueError("Unsupported Verilog instruction")
+
+
     
 def verilog_if_to_mips(verilog_if_statement):
     if verilog_if_statement.startswith('if'):
@@ -44,7 +48,8 @@ def verilog_if_to_mips(verilog_if_statement):
             body = body.replace(verilog_reg, mips_reg)
 
         # Construct the MIPS if statement
-        mips_if_statement = "{mips_condition} {body}"
+        mips_if_statement = "{} {}".format(mips_condition, body)
+
         
         return mips_if_statement
     else:
@@ -53,6 +58,7 @@ def verilog_if_to_mips(verilog_if_statement):
 
 #Main function for testing
 def main():
+
     verilog_instruction = "add r1, r2, r3"
     mips_instruction = verilog_to_mips(verilog_instruction)
     print(mips_instruction)
