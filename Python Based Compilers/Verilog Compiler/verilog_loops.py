@@ -1,3 +1,9 @@
+"""
+Author: Rohan Singh
+Parser for verilog loops
+"""
+
+
 def verilog_loop_to_mips(verilog_loop):
     # Split the Verilog loop into its components
     loop_components = verilog_loop.split(' ')

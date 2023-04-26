@@ -1,6 +1,6 @@
 """
 Author: Rohan Singh
-Python Compiler for verilog to Mips
+Compiler for add and if statements in verilog
 """
 
 def verilog_to_mips(verilog_instruction):

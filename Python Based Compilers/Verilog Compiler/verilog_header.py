@@ -1,3 +1,9 @@
+"""
+Author: Rohan Singh
+Parser for verilog file headers
+"""
+
+
 def parse_verilog_module_header(verilog_code):
     # Find the module declaration
     module_declaration_start = verilog_code.find('module')

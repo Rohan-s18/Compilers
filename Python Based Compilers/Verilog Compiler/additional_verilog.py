@@ -1,3 +1,9 @@
+"""
+Author: Rohan Singh
+Parser for verilog assingments
+"""
+
+
 def convert_assign_to_mips(verilog_assign_statement):
     # Split the assign statement into its LHS and RHS expressions
     lhs, rhs = verilog_assign_statement.split('=')
