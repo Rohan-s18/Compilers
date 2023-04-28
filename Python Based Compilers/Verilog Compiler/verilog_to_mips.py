@@ -3,7 +3,7 @@ Author: Rohan Singh
 Compiler for add and if statements in verilog
 """
 
-def verilog_to_mips(verilog_instruction):
+def vadd(verilog_instruction):
     if verilog_instruction.startswith('add'):
         # Split the instruction into its operands
         operands = verilog_instruction.split(' ')[1:]
@@ -25,7 +25,7 @@ def verilog_to_mips(verilog_instruction):
 
 
     
-def verilog_if_to_mips(verilog_if_statement):
+def vif(verilog_if_statement):
     if verilog_if_statement.startswith('if'):
         # Split the if statement into its condition and body
         condition, body = verilog_if_statement.split(') ')
@@ -60,11 +60,11 @@ def verilog_if_to_mips(verilog_if_statement):
 def main():
 
     verilog_instruction = "add r1, r2, r3"
-    mips_instruction = verilog_to_mips(verilog_instruction)
+    mips_instruction = vadd(verilog_instruction)
     print(mips_instruction)
 
     verilog_if_statement = "if (r1 == r2) r3 = r1 + r2;"
-    lmao = verilog_if_to_mips(verilog_if_statement)
+    lmao = vif(verilog_if_statement)
     print(lmao)
 
 if __name__ == "__main__":

@@ -38,21 +38,41 @@ def compile(file_in, file_out):
     lines = file_data.splitlines()
     print(lines)
     file_obj.close()
-    
+
     out = ""
+
+    for line in lines:
+        out += choose(line)
     
-
-
-
     
+    return out
 
+
+
+#  Function to choose the function
+def choose(instruction):
+    out = ""
+
+    #Selecting the instruction
+    if(instruction.startswith("add")):
+        out = vm.vadd(instruction)
+    elif(instruction.startswith("if")):
+        out = vm.vadd(instruction)
+    elif(instruction.startswith("for")):
+        out = vl.verilog_loop_to_mips(instruction)
+    #else:
+        #out = av.convert_assign_to_mips(instruction)
+
+    return out
 
 
 #  Main function for testing purposes
 def main():
     
     #Calling the compiler driver
-    compile("/Users/rohansingh/github_repos/Compilers/Python Based Compilers/Verilog Compiler/verilog_header.txt","")
+    result = compile("/Users/rohansingh/github_repos/Compilers/Python Based Compilers/Verilog Compiler/verilog_header.txt","")
+
+    print(result)
 
 
 if __name__ == "__main__":

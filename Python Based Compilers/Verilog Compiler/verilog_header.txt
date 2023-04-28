@@ -1,3 +1,4 @@
 module my_module(input a, input b, output c, output d);
-    // module code here
+add $s1, $s2, $s3
+beq $s1, $s2, $s3 = $s1 + $s2
 endmodule
